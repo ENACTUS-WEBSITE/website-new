@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Externel Stylesheet -->
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="../dist/styles/index.css">
+
+    <!-- Tailwind CSS CDN -->
+    <!-- <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet"> -->
+
+
+    <!-- Poppins CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link href="assets/fonts/style.css" rel="stylesheet" />
+
+
+
+    <!-- Flowbite CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+
+
+
+
+    <title>Enactus VITC</title>
+</head>
+
+<body>
+    <!-- component -->
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }"
+            class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+                <a href="#"
+                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline flex items-center justify-center gap-2">
+                    <img src="../images/enactus.png" alt="Enactus Logo" class="w-12">
+                    <span>ENACTUS VITC</span></a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="flex-col flex-grow md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:bg-yellow-300 rounded-lg md:mt-0"
+                    href="#">ABOUT US</a>
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex flex-row hover:bg-yellow-300 focus:border-yellow-300 items-center justify-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg md:w-auto md:inline md:mt-0 md:ml-4">
+                        <span class="hover:text-gray-900">PROJECTS</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 ml-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-40">
+                        <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold rounded-lg hover:bg-yellow-300 hover:text-gray-900"
+                                href="#">INARA</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:bg-yellow-300 hover:text-gray-900"
+                                href="#">POORANYA</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:bg-yellow-300 hover:text-gray-900"
+                                href="#">NAARI</a>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:bg-yellow-300 hover:text-gray-900"
+                                href="#">POORANYA</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold hover:text-gray-900 hover:bg-yellow-300 rounded-lg md:mt-0"
+                    href="#">SHOP</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold hover:text-gray-900 hover:bg-yellow-300 rounded-lg md:mt-0"
+                    href="#">TEAM</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold hover:text-gray-900 hover:bg-yellow-300 rounded-lg md:mt-0"
+                    href="#">CONTACT</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <div id="default-carousel" class="relative" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <span
+                    class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First
+                    Slide</span>
+                <img src="../images/1-1280x850.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/main-cover-1-1280x854.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/main-cover-4-1280x853.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/main-cover-3-1280x853.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/img-20200116-wa0006-1-1280x853.png"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 6 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../images/img-20190921-wa0092-1-1024x768.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                data-carousel-slide-to="3"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                data-carousel-slide-to="4"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+                data-carousel-slide-to="5"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+    <section class="org flex items-center justify-center">
+        <div class="m-10 md:m-20">
+            <div class="flex flex-col md:flex-row items-center md:justify-center gap-4">
+                <div class="">
+                    <img src="../images/enactus-logo-1-1256x1256.png" alt="" class="w-96" />
+                </div>
+                <div class="md:w-1/2">
+                    <div class="text-wrapper">
+                        <h3 class="text-2xl font-medium md:text-4xl leading-normal text-[#353535] mb-3">
+                            <strong>We are a nonprofit organisation
+                            </strong>
+                            <div><strong>and work worldwide</strong></div>
+                        </h3>
+                        <p class="text-sm md:text-xl leading-normal">
+                            <strong>ENACTUS</strong> is an international
+                            non-profit organization dedicated to inspiring
+                            students to improve the world through
+                            entrepreneurial action. A community of student,
+                            academic and business leaders committed to using
+                            the power of entrepreneurial action to transform
+                            lives and shape a better, more sustainable
+                            world.
+                            <br />
+                            <br /><strong>EN</strong>trepreneurial:
+                            initiating business ideas and solutions with
+                            passion and innovation. <br /><strong>ACT</strong>ion: The experience of sustainable impact,
+                            activated with integrity. <br /><strong>US</strong>: Student, academic and business leaders
+                            collaborating to create a better world. Enactus
+                            is spread across 36 countries and partnered with
+                            over 1700 Universities empowering 1,950,000+
+                            people
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="flex items-center justify-center">
+        <div class="m-5 md:m-10">
+            <div class="flex items-center justify-center">
+                <h3 class="projects text-4xl">
+                    <strong>Our Projects</strong>
+                </h3>
+            </div>
+            <div class="flex items-center justify-center p-10 md:p-20 flex-col ">
+                <div class="grid md:grid-cols-2 md:grid-rows-2 gap-16 md:gap-12">
+                    <div
+                        class="group hover:bg-yellow-400 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer rounded-md hover:shadow-lg flex items-between justify-center flex-col h-full p-5">
+                        <div class=" flex items-center justify-between flex-col align-center h-full">
+                            <div class="max-w-lg ">
+                                <img src="../images/naari-logo-bg-1-816x816.png" alt="" title=""
+                                    class="w-30 rounded-md" />
+                            </div>
+                            <div class="text-center m-5 flex flex-col items-center justify-start h-full gap-5">
+                                <h5 class="item-title mbr-fonts-style display-4">
+                                    <em>Nov, 2019</em>
+                                </h5>
+                                <h6 class="text-2xl">
+                                    <strong>Project Naari</strong>
+                                </h6>
+                                <p class="text-justify text-base max-w-sm">
+                                    Project Naari has its roots from the very
+                                    essence of the taboos, myths, and menstrual
+                                    illiteracy that still continue to exist in
+                                    the India of the 21st century. Since 2018,
+                                    NAARI continues to raise awareness about
+                                    menstruation and its basic hygiene, by
+                                    educating women about their body and their
+                                    basic menstrual needs.
+                                <p>
+                            </div>
+                            <div
+                                class="bg-[#353535] px-8 py-3 text-white group-hover:bg-white group-hover:text-[#353535] rounded-md text-sm">
+                                <a href="Naari.html#top" class="">Read
+                                    More &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group hover:bg-yellow-400 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer rounded-md hover:shadow-lg flex items-between justify-center flex-col h-full p-5">
+                        <div class=" flex items-center justify-between flex-col align-center h-full">
+                            <div class="max-w-lg ">
+                                <img src="../images/inara-logo-bg-1-816x816.png" alt="" title=""
+                                    class="w-30 rounded-md" />
+                            </div>
+                            <div class="text-center m-5 flex flex-col items-center justify-start h-full gap-5">
+                                <h5 class="item-title mbr-fonts-style display-4">
+                                    <em>Jan, 2020</em>
+                                </h5>
+                                <h6 class="text-2xl">
+                                    <strong>Project Inara</strong>
+                                </h6>
+                                <p class="text-justify text-base max-w-sm">
+                                    Project Inara aims at producing biodegradable bowls, candles, and accessories out of
+                                    discarded coconut shells. Inara believes in “Crafting future” by training the Irular
+                                    community in shell craft and generating livelihood to “Remould” their lives.
+                                <p>
+                            </div>
+                            <div
+                                class="bg-[#353535] px-8 py-3 text-white group-hover:bg-white group-hover:text-[#353535] rounded-md text-sm">
+                                <a href="Naari.html#top" class="">Read
+                                    More &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group hover:bg-yellow-400 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer rounded-md hover:shadow-lg flex items-between justify-center flex-col h-full p-5">
+                        <div class=" flex items-center justify-between flex-col align-center h-full">
+                            <div class="max-w-lg ">
+                                <img src="../images/Malar-logo.png" alt="" title="" class="w-30 rounded-md" />
+                            </div>
+                            <div class="text-center m-5 flex flex-col items-center justify-start h-full gap-5">
+                                <h5 class="item-title mbr-fonts-style display-4">
+                                    <em>Jun, 2019</em>
+                                </h5>
+                                <h6 class="text-2xl">
+                                    <strong>Project Malar</strong>
+                                </h6>
+                                <p class="text-justify text-base max-w-sm">
+                                    Primarily, the aim is to tackle the pollution caused by flowers at its roots and
+                                    hence trying to minimise the water pollution caused indirectly due to this, and
+                                    provides a livelihood mainly to female scavengers by employing them right from the
+                                    collection of flowers to the manufacturing of the incense sticks.
+                                <p>
+                            </div>
+                            <div
+                                class="bg-[#353535] px-8 py-3 text-white group-hover:bg-white group-hover:text-[#353535] rounded-md text-sm">
+                                <a href="Naari.html#top" class="">Read
+                                    More &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group hover:bg-yellow-400 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer rounded-md hover:shadow-lg flex items-between justify-center flex-col h-full p-5">
+                        <div class=" flex items-center justify-between flex-col align-center h-full">
+                            <div class="max-w-lg ">
+                                <img src="../images/pooranya-logo-bg-1-1160x1160.png" alt="" title=""
+                                    class="w-30 rounded-md" />
+                            </div>
+                            <div class="text-center m-5 flex flex-col items-center justify-start h-full gap-5">
+                                <h5 class="item-title mbr-fonts-style display-4">
+                                    <em>Jan, 2020</em>
+                                </h5>
+                                <h6 class="text-2xl">
+                                    <strong>Project Pooranya</strong>
+                                </h6>
+                                <p class="text-justify text-base max-w-sm">
+                                    Project Pooranya aims to metamorphose doomed fabric into beautifully upcycled
+                                    products. With the able workforce from Teynampet and Kolathur, Pooranya makes
+                                    sustainable fashion more affordable than ever.
+                                <p>
+                            </div>
+                            <div
+                                class="bg-[#353535] px-8 py-3 text-white group-hover:bg-white group-hover:text-[#353535] rounded-md text-sm">
+                                <a href="Naari.html#top" class="">Read
+                                    More &gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+
+        <div class="p-10 flex items-center justify-center flex-col gap-6">
+            <h3 class="products text-4xl">
+                <strong>Our Products</strong>
+            </h3>
+
+
+            <div id="carouselExampleCaptions" class="relative w-[90%]" data-te-carousel-init data-te-carousel-slide>
+                <div class="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+                    data-te-carousel-indicators>
+                    <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="0"
+                        data-te-carousel-active
+                        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="1"
+                        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="2"
+                        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-te-target="#carouselExampleCaptions" data-te-slide-to="3"
+                        class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="relative w-full overflow-hidden after:clear-both after:block after:content-[''] ">
+                    <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
+                        <!-- <img src="../images/-dsc7051-1900x1267.jpeg" class="block w-full"
+                            alt="..." /> -->
+                        <a href="https://bit.ly/MALAR" target="_blank"></a><a href="https://bit.ly/MALAR"
+                            target="_blank"></a><a href="https://bit.ly/MALAR" target="_blank"></a><a
+                            href="https://bit.ly/MALAR" target="_blank"><img class="d-block w-100"
+                                src="../images/-dsc7051-1900x1267.jpeg" /></a>
+                        <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+                            <h5 class="text-xl">Malar Incense
+                                Sticks</h5>
+                            <p>
+                                Made by recycling flowers
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        data-te-carousel-item style="backface-visibility: hidden">
+                        <img src="../images/repost-2-1080x1920.png" class="block w-full" alt="..." />
+                        <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+                            <h5 class="text-xl">Atoot -Collection by
+                                Inara</h5>
+                            <p>
+                                Handmade Rakhi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        data-te-carousel-item style="backface-visibility: hidden">
+                        <!-- <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full"
+                            alt="..." /> -->
+                        <a href="https://bit.ly/MALAR" target="_blank"></a><a href="https://bit.ly/MALAR"
+                            target="_blank"><img class="d-block w-100" src="../images/-dsc7049-1900x1267.jpeg"
+                                data-slide-to="2" data-bs-slide-to="2" /></a>
+                        <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+                            <h5 class="text-xl">
+                                Malar Incense Sticks
+                            </h5>
+                            <p>
+                                Made by recycling flowers
+                            </p>
+                        </div>
+                    </div>
+                    <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                        data-te-carousel-item style="backface-visibility: hidden">
+                        <!-- <img src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(23).jpg" class="block w-full"
+                            alt="..." /> -->
+                        <a href="https://bit.ly/MALAR" target="_blank"></a><a href="https://bit.ly/MALAR" target="_blank"><img
+                                class="d-block w-100" src="../images/dsc04959-1-1156x771.jpg" /></a>
+                        <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+                            <h5 class="text-xl">
+                                Atoot -Collection by
+                                Inara
+                            </h5>
+                            <p>
+                                Handmade Rakhi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+                    type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
+                    <span class="inline-block h-8 w-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </span>
+                    <span
+                        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
+                </button>
+                <button
+                    class="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+                    type="button" data-te-target="#carouselExampleCaptions" data-te-slide="next">
+                    <span class="inline-block h-8 w-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </span>
+                    <span
+                        class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <script src="../node_modules/tw-elements/dist/js/index.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+
+</body>
+
+</html>
