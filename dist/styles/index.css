@@ -1,3 +1,29 @@
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sansation {
+    font-family: 'Sansation-Bold';
+}
+
 ::-webkit-scrollbar {
     display: none;
+}
+
+.contact-btn {
+    background: transparent !important;
+    border: 2px solid #ffe161 !important;
+    background: #ffe161 !important;
+    transition: all 0.4s;
+}
+
+.contact-btn:hover {
+    border: 2px solid #ffe161 !important;
+    background: transparent !important;
+    transition: all 0.4s;
+
+}
+
+footer {
+    background: #232323 !important;
 }
